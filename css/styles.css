@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+    --Pale-blue: hsl(225, 100%, 94%);
+    --btn-blue: hsl(245, 75%, 52%);
+    --violet: hsla(245, 75%, 52%, 70%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Red Hat Display, sans-serif;
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-color: var(--Pale-blue);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card{
+    width: 33vw;
+    max-width: 430px;
+    min-width: 340px;
+    background-color: white;
+    margin: 5% auto;
+    border-radius: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.card-header, img{
+  border-radius: 20px 20px 0 0;
+}
+
+.card-content{
+    padding: 2.5rem;
+}
+
+.order-summary h3{
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--Dark-blue);
+}
+
+.order-summary p{
+    margin: 1rem auto;
+    color: var(--Desaturated-blue);
+}
+
+
+.plan-section{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--Very-pale-blue);
+    border-radius: 10px;
+}
+
+.plan-section a{
+  font-weight: 700;
+  color: var(--btn-blue);
+  font-size: 0.8rem;
+}
+
+.plan{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--Desaturated-blue);
+}
+
+.plan p>span{
+  font-weight: 900;
+  color: var(--Dark-blue);
+}
+
+.btn{
+  width: 100%;
+  padding: 0.8rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  background-color: var(--btn-blue);
+  color: white;
+  box-shadow:  hsla(245, 75%, 52%, 30%) 0px 15px 30px;
+}
+
+.card-content>a{
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--Desaturated-blue);
+}
+
+.btn:hover, .btn:active{
+  background-color: var(--violet);
+}
+
+.plan-section a:hover, .plan-section a:hover{
+  color: var(--violet);
+}
+
+.card-content>a:hover, .card-content>a:active{
+  color: var(--Dark-blue);
+}
+
+@media (max-width: 1084px) {
+    .card-content{
+        padding: 2rem 1.7rem;
+    }
+    
+    .plan-section{
+        padding: 1rem;
+    }
+
+    .order-summary br{
+        display: none;
+    }
+}
+
+@media (max-width: 840px) {
+  .order-summary h3{
+    font-size: 1.5rem;
+
+  }  
+  .order-summary p{
+    padding: 0 0.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .plan-section a{
+    font-size: 0.85rem;
+  }
+  
+  .btn{
+    margin: 1.5rem 0;
+  }
+}
